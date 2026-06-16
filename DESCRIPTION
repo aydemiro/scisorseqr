@@ -16,7 +16,6 @@ LazyData: true
 RoxygenNote: 7.1.1
 Depends: R (>= 3.5.0)
 Suggests:
-    data.table,
     parallel,
     data.tree,
     yaml,
@@ -37,6 +36,7 @@ Imports:
     magrittr,
     tibble,
     ggplot2,
-    cowplot
+    cowplot,
+    data.table
 Language: en-US
 VignetteBuilder: knitr
