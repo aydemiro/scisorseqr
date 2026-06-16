@@ -138,9 +138,9 @@ rmCommand="rm "
 for i in `cat $outdir"/mapping.bestperRead.noRiboRNA.introns.gff" | awk '{if(!($1 in s))print $1;s[$1]=1;}' | sort -u | \
 awk '{if($1~/chr|\./) {print } else {print "chr"$1}}'`; do
     seqfile=$seqDirectory"/"$i".fa.gz";
-    f2tFunc=$scriptDir/"f2t.sh"
+    #f2tFunc=$scriptDir/"f2t.sh"
     echo $seqfile >&2;
-    str="source "$f2tFunc"; zcat "$seqfile" | FastaToTbl | awk -v chr="$i" \
+    str="zcat "$seqfile" | awk -f ${scriptDir}/fasta_to_tbl.awk | awk -v chr="$i" \
 -v file="$outdir"/mapping.bestperRead.noRiboRNA.introns.gff -f \
 "$scriptDir"/v0.1.getSpliceSiteSequence.awk > \
 "$tmpdir1"/site_sequence."$i
