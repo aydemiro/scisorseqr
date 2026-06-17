@@ -37,6 +37,7 @@ Imports:
     tibble,
     ggplot2,
     cowplot,
-    data.table
+    data.table,
+    R.utils
 Language: en-US
 VignetteBuilder: knitr
