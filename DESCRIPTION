@@ -38,6 +38,6 @@ Imports:
     ggplot2,
     cowplot,
     data.table,
-    R.utils
+    R.utils (>= 2.13.0)
 Language: en-US
 VignetteBuilder: knitr
